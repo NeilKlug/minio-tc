@@ -1,0 +1,14 @@
+services:
+  minio-tc:
+    build: ./
+    container_name: minio-tc
+    env_file:
+      - secrets.env
+    ports:
+      - 9000:9000
+      - 9002:9002
+    command: server /data --console-address ":9002"
+    volumes:
+      - ~/temp:/data
+    cap_add:
+      - NET_ADMIN
