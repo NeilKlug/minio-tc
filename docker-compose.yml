@@ -1,6 +1,7 @@
 services:
   minio-tc:
     build: ./
+    image: local/minio-tc
     container_name: minio-tc
     env_file:
       - secrets.env
